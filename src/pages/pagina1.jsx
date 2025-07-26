@@ -1,7 +1,11 @@
 import React from 'react'
 
 import { useState } from 'react';
+{/* Iconos */}
 import { AiOutlineExclamationCircle } from 'react-icons/ai';
+
+{/* Pages */}
+import Search from './search';
 import Lista from './Lista'
 export default function Pagina1 () {
     const [nombre, setNombre] = useState('')
@@ -12,8 +16,11 @@ export default function Pagina1 () {
     {/* Modal para confirmar la eliminación de un usuario */}
     const [mostrarModal, setMostrarModal] = useState(false);
     const [usuarioAEliminar, setUsuarioAEliminar] = useState(null);
-    
-    
+    {/* Barra de Busqueda */}
+    const [busqueda, setBusqueda] = useState('');
+    const datosFiltrados = datos.filter((dato) =>
+    `${dato.nombre} ${dato.apellido}`.toLowerCase().includes(busqueda.toLowerCase())
+    );
 
     const manejarSubmit = (e) => {
         e.preventDefault();
@@ -63,8 +70,9 @@ export default function Pagina1 () {
 
       
     <h1 className='text-3xl font-bold text-amber-800'>GESTION DE DATOS</h1>
-      
-      
+    
+    <Search busqueda={busqueda} setBusqueda={setBusqueda} />
+
     
     
       
@@ -135,10 +143,20 @@ export default function Pagina1 () {
 
 
         </div>
+
+
+
+
         <div className="col-span-1 sm:col-span-2 md:col-span-2 row-span-4 md:col-start-3  m-2">
             {/* Lista de Datos */}
-            <Lista datos={datos}  eliminarDato={eliminarDato} editarDato={editarDato} />
+            
+            <Lista datos={datosFiltrados} eliminarDato={eliminarDato} editarDato={editarDato} />
+
         </div>
+
+
+
+
     </div>
 
     {mostrarModal && (
