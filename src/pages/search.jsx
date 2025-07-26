@@ -6,7 +6,7 @@ export default function Search ({busqueda, setBusqueda}) {
         placeholder="Buscar por nombre o apellido"
         value={busqueda}
         onChange={(e) => setBusqueda(e.target.value)}
-        className="w-xl border border-gray-300 rounded-md p-2 m-4"
+        className="w-[200px] border border-gray-300 rounded-md p-2 m-4 sm:w-[400px]"
       />
     </div>
   </>

@@ -96,7 +96,7 @@ export default function Pagina1 () {
                     id="nombre"
                     name="nombre"
                     placeholder="Ingrese su nombre"
-                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full border border-gray-300 rounded-md p-2 "
                     required
                     />
                 </div>
@@ -111,7 +111,7 @@ export default function Pagina1 () {
                     id="apellido"
                     name="apellido"
                     placeholder="Ingrese su apellido"
-                    className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full border border-gray-300 rounded-md p-2 "
                     required
                     />
                 </div>
