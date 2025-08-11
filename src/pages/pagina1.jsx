@@ -52,8 +52,6 @@ export default function Pagina1 () {
         setMostrarModal(false);
         setUsuarioAEliminar(null);
     };
-
-
     const editarDato = (index) => {
         const dato = datos[index];
         setNombre(dato.nombre);
@@ -61,27 +59,9 @@ export default function Pagina1 () {
         setEdad(dato.edad);
         setEditIndex(index);
     };
-
-
-
-
   return <div>
-      
-
-      
     <h1 className='text-3xl font-bold text-amber-800'>GESTION DE DATOS</h1>
-    
     <Search busqueda={busqueda} setBusqueda={setBusqueda} />
-
-    
-    
-      
-    
-    
-
-
-
-    
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4  grid-rows-4 gap-4 p-4">
         <div className="col-span-1 sm:col-span-2 md:col-span-2 row-span-4 ">
             <form onSubmit={manejarSubmit} className="max-w-md mx-auto p-4 ">
@@ -125,7 +105,7 @@ export default function Pagina1 () {
                     onChange={(e) => setEdad(e.target.value)}
                     id="edad"
                     name="edad"
-                    min={0}
+                    min={5}
                     max={100}
                     placeholder="Ingrese su edad"
                     className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -140,23 +120,11 @@ export default function Pagina1 () {
                     {editIndex !== null ? 'Actualizar' : 'Enviar'}
                 </button>
             </form>
-
-
         </div>
-
-
-
-
         <div className="col-span-1 sm:col-span-2 md:col-span-2 row-span-4 md:col-start-3  m-2">
-            {/* Lista de Datos */}
-            
+            {/* Lista de Datos */}   
             <Lista datos={datosFiltrados} eliminarDato={eliminarDato} editarDato={editarDato} />
-
         </div>
-
-
-
-
     </div>
 
     {mostrarModal && (
@@ -186,12 +154,8 @@ export default function Pagina1 () {
         </div>
     </div>
     
-    
     )}
 </div>
-    
-    
-  
 }
 
 

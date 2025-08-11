@@ -5,7 +5,7 @@ import { MdDelete } from "react-icons/md";
 export default function  Lista ({datos, eliminarDato, editarDato}) {
   return <>
       <h1 className='text-3xl font-bold '>Lista </h1>
-      <table className='table-auto border-collapse border-2 border-slate-400 w-full mb-4 mb-4 rounded-lg overflow-hidden'>
+      <table className='table-auto border-collapse border-2 border-slate-400 w-full mb-4  rounded-lg overflow-hidden'>
                 <thead className='text-center bg-gray-700 text-white' >
                     <tr className=''>
                         <th className='text-bold text-xl'>
@@ -43,17 +43,14 @@ export default function  Lista ({datos, eliminarDato, editarDato}) {
                                 >
                                     <FaPencilAlt />
                                 </button>
-                                 <button
+                                <button
                                     onClick={() => eliminarDato(index)}
                                     className='flex items-center justify-center bg-green-600 text-white px-4 m-2 py-3 rounded-md hover:bg-green-700 transition-colors cursor-pointer w-[50px]  sm:w-[100px] duration-500'
                                 >
                                     <MdDelete />
                                 </button>
-
                                 </div>
-                                
                             </td>
-                           
                         </tr>
                     ))}
                 </tbody>
